@@ -1,1 +1,50 @@
 <h1>LISTADO DE CLIENTES</h1>
+<form (submit)="add(client)">
+    <div>
+        <label for="">Firstname</label>
+        <input type="text" [(ngModel)]="client.firstname" name="firstname">        
+    </div>
+    <div>
+        <label for="">Lastname</label>
+        <input type="text" [(ngModel)]="client.lastname" name="lastname">
+    </div>
+    <div>
+        <label for="">Cellphone</label>
+        <input type="text" [(ngModel)]="client.cellphone" name="cellphone">
+    </div>
+    <div>
+        <label for="">Type</label>
+        <input type="text" [(ngModel)]="client.type" name="type">
+    </div>
+    <div>
+        <label for="">Address</label>
+        <input type="text" [(ngModel)]="client.address" name="type">
+    </div>
+    <div>
+        <button type="submit">add</button>
+    </div>
+</form>
+<input type="search" [(ngModel)]="value">
+<button (click)="search(value)">buscar</button>
+<table>
+    <thead>
+        <tr>
+            <th>N.</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Cellphone</th>
+            <th>Type</th>
+            <th>Address</th>    
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of clients; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ c.firstname }}</td>
+            <td>{{ c.lastname }}</td>
+            <td>{{ c.cellphone }}</td>
+            <td>{{ c.type }}</td>
+            <td>{{ c.address }}</td>
+        </tr>
+    </tbody>
+</table>
